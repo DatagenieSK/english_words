@@ -1,5 +1,2 @@
-random
-json
-os
-nltk
 streamlit
+nltk
