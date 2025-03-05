@@ -3,8 +3,7 @@ import json
 import os
 import nltk
 from nltk.corpus import wordnet
-import tkinter as tk
-from tkinter import ttk
+import streamlit as st
 
 nltk.download('wordnet', quiet=True)
 
@@ -56,44 +55,21 @@ def generate_daily_words():
     save_state(shuffled_list, position)
     return {word: get_word_meaning(word) for word in new_words}
 
-def create_gui():
-    root = tk.Tk()
-    root.title("Daily Words")
-    root.geometry("600x400")
-    root.configure(bg="#f0f2f5")
+# Streamlit app
+def main():
+    st.title("Your Daily Words")
+    st.write("Click below to generate five new words and their meanings!")
 
-    style = ttk.Style()
-    style.configure("TButton", font=("Helvetica", 12), padding=10)
-    style.configure("TLabel", font=("Helvetica", 11), background="#f0f2f5")
-
-    title_label = ttk.Label(root, text="Your Daily Words", font=("Helvetica", 16, "bold"))
-    title_label.pack(pady=20)
-
-    word_frame = tk.Frame(root, bg="#f0f2f5")
-    word_frame.pack(pady=10, fill="both", expand=True)
-
-    def display_words():
-        for widget in word_frame.winfo_children():
-            widget.destroy()
+    # Button to generate words
+    if st.button("Generate New Words"):
         daily_words = generate_daily_words()
-        for word, meaning in daily_words.items():
-            word_label = ttk.Label(
-                word_frame, 
-                text=f"{word.capitalize()}: {meaning}",
-                wraplength=550, 
-                justify="left",
-                background="#ffffff",
-                relief="solid",
-                borderwidth=1,
-                padding=10
-            )
-            word_label.pack(pady=5, padx=20, fill="x")
+        # Store in session state to display
+        st.session_state['words'] = daily_words
 
-    generate_button = ttk.Button(root, text="Generate New Words", command=display_words, style="TButton")
-    generate_button.pack(pady=20)
-
-    display_words()
-    root.mainloop()
+    # Display words if they exist in session state
+    if 'words' in st.session_state:
+        for word, meaning in st.session_state['words'].items():
+            st.markdown(f"**{word.capitalize()}**: {meaning}")
 
 if __name__ == "__main__":
-    create_gui()
+    main()
