@@ -1,66 +1,76 @@
-# English Words - Streamlit App
+English Words - Streamlit App
 
-## 📌 Live Demo
-🔗 [English Words - Streamlit App](https://datageniesk-english-words-english-words-wxfkyw.streamlit.app/)
+📌 Live Demo
 
-## 📂 Project Repository
-🔗 [GitHub Repository](https://github.com/DatagenieSK/english_words)
+🔗 English Words - Streamlit App
 
-## 📖 About the Project
-This Streamlit app generates five random English words daily and provides their meanings using the **NLTK WordNet** database. It ensures that each word is randomly picked from a predefined word list and maintains session state to track previous words.
+📂 Project Repository
 
-## 🚀 Features
-- Generates **five new words** daily.
-- Provides **definitions** using the WordNet database.
-- Saves and retrieves the **word state** using JSON files.
-- **Interactive UI** using Streamlit.
+🔗 GitHub Repository
 
-## 🛠️ Technologies Used
-- **Python**
-- **Streamlit** (for UI)
-- **NLTK** (for word definitions)
-- **JSON & OS** (for data storage)
+📖 About the Project
 
-## 📑 Installation Guide
-### 1️⃣ Clone the Repository
-```sh
+This Streamlit app generates five random English words daily and provides their meanings using the NLTK WordNet database. It ensures that each word is randomly picked from a predefined word list and maintains session state to track previous words.
+
+🚀 Features
+
+Generates five new words daily.
+
+Provides definitions using the WordNet database.
+
+Saves and retrieves the word state using JSON files.
+
+Interactive UI using Streamlit.
+
+🛠️ Technologies Used
+
+Python
+
+Streamlit (for UI)
+
+NLTK (for word definitions)
+
+JSON & OS (for data storage)
+
+📑 Installation Guide
+
+1️⃣ Clone the Repository
+
 git clone https://github.com/DatagenieSK/english_words.git
 cd english_words
-```
 
-### 2️⃣ Install Dependencies
-Ensure you have Python **3.7+** installed. Then run:
-```sh
+2️⃣ Install Dependencies
+
+Ensure you have Python 3.7+ installed. Then run:
+
 pip install -r requirements.txt
-```
 
-### 3️⃣ Download NLTK Data
+3️⃣ Download NLTK Data
+
 Run the following in Python to download the WordNet dataset:
-```python
+
 import nltk
 nltk.download('wordnet')
-```
 
-### 4️⃣ Run the Streamlit App
-```sh
+4️⃣ Run the Streamlit App
+
 streamlit run app.py
-```
 
-## 📜 File Structure
-```
+📜 File Structure
+
 english_words/
 │-- app.py              # Main Streamlit app
 │-- word_list.txt       # List of words for the app
 │-- word_state.json     # Stores shuffled words & progress
 │-- requirements.txt    # Dependencies
 │-- README.md           # Project documentation
-```
 
-## 📩 Contributing
+📩 Contributing
+
 Feel free to fork this repository and submit a pull request if you’d like to improve the app!
 
-## ⚡ Contact
-For any issues or suggestions, please raise an issue in the **GitHub repository** or reach out to **[DatagenieSK](https://github.com/DatagenieSK/)**.
+⚡ Contact
 
----
-### ⭐ Don't forget to **star** the repository if you found this helpful! 🚀
+For any issues or suggestions, please raise an issue in the GitHub repository or reach out to DatagenieSK.
+
+⭐ Don't forget to star the repository if you found this helpful! 🚀
