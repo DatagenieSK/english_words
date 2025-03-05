@@ -57,11 +57,11 @@ def generate_daily_words():
 
 # Streamlit app
 def main():
-    st.title("Your Daily Words")
-    st.write("Click below to generate five new words and their meanings!")
+    st.title("Assalamu alaikum bhai")
+    st.write("niche click kar naye words ke liye")
 
     # Button to generate words
-    if st.button("Generate New Words"):
+    if st.button("Dabade yaar"):
         daily_words = generate_daily_words()
         # Store in session state to display
         st.session_state['words'] = daily_words
