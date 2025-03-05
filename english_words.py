@@ -58,7 +58,7 @@ def generate_daily_words():
 # Streamlit app
 def main():
     st.title("Assalamu alaikum bhai")
-    st.write("niche click kar naye words ke liye")
+    st.write("Niche click kar naye words ke liye")
 
     # Button to generate words
     if st.button("Dabade yaar"):
